@@ -87,8 +87,14 @@ Ao passar um objeto:
 O retorna será:
 ```sh
 {
-    "id": "619a9c4aac16ea1246ff3cf9",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlhOWM0YWFjMTZlYTEyNDZmZjNjZjkiLCJpYXQiOjE2Mzc1MjI1MDYsImV4cCI6MTYzNzUyNTgwNn0.0pXkSB-NkrXhk-NTiqsFvBaZxyBjjjZgjp_QppEmsr4"
+    "id": 5,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImlhdCI6MTYzNzgyNzk5MywiZXhwIjoxNjM3ODMxMjkzfQ.53IaAXk09FPlsyeHeQgD_5zj9j-KUXdXGO5yY4XhFLU",
+    "name": "Aderbar Pereira Santos",
+    "email": "santos@cap.com",
+    "cpf": "12345678911",
+    "role": "customer",
+    "updatedAt": "2021-11-25T08:13:13.595Z",
+    "createdAt": "2021-11-25T08:13:13.595Z"
 }
 ```
 
@@ -99,15 +105,18 @@ O retorna será:
 Ao passar um objeto:
 ```sh
 {
-  "email": "emailcadastradoexample",
+  "email": "emailcadastradoexample@email.com",
   "password": "passwordexample",
 }
 ```
 O retorna será:
 ```sh
 {
-    "id": "619a9c4aac16ea1246ff3cf9",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlhOWM0YWFjMTZlYTEyNDZmZjNjZjkiLCJpYXQiOjE2Mzc1MjI2NzUsImV4cCI6MTYzNzUyNTk3NX0.yODEqEvAvCT0LKoqCAKL-4YUj26OlrsTrD7zs96S5kw"
+    "name": "Aderbar Pereira Santos",
+    "email": "santos@cap.com",
+    "cpf": "12345678911",
+    "role": "customer",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mzc4MjgwMzUsImV4cCI6MTYzNzgzMTMzNX0.8rXKcmbm1CKo0M-IECTmYJ2l1aiQ2Q-ZAdFt4WOMGOw"
 }
 ```
 
@@ -119,11 +128,15 @@ O retorna será:
 1 - http://localhost:${SERVER_PORT}/customer/products
 ```
 
+O retorna será:
+```sh
+```
+
 
 #### *POST*
   Nesta rota é possível realizar uma *compra*
 ```sh
-1 - http://localhost:${SERVER_PORT}/customer/checkout
+1 - http://localhost:${SERVER_PORT}/sales
 ```
 
 `Neste caso é necessário passar o token recebido ao realizar o login no Headers da requisição`
@@ -147,4 +160,64 @@ Ao passar um objeto:
      { name: 'Heineken 600ml', quantity: 1, price: '7.50', stock: 5 } 
     ]
  }
+```
+
+O retorna será:
+```sh
+dataValues: {
+  id: 3,
+  userId: 4,
+  ellerId: 2,
+  totalPrice: 2.2,
+  deliveryAddress: 'Rua francisco',
+  deliveryNumber: '1',
+  status: 'Pendente',
+  saleDate: 2021-11-25T08:22:59.477Z,
+  updatedAt: 2021-11-25T08:22:59.478Z,
+  createdAt: 2021-11-25T08:22:59.478Z
+},
+```
+
+#### *GET*
+  Nesta rota é possível listar compras de um *usuário*
+```sh
+2 - http://localhost:${SERVER_PORT}/sales
+```
+
+`Neste caso é necessário passar o token recebido ao realizar o login no Headers da requisição`
+
+```sh
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlhOGYxZWRlOWJmN2U2MjcwMWU2MGQiLCJpYXQiOjE2Mzc1MTkxMzQsImV4cCI6MTYzNzUyMjQzNH0.fNGQ-Q9J3GkXhm_KcjCQkRsZxI9wGqd9hYdDJpHLT60
+```
+
+O retorna será:
+```sh
+[
+    {
+        "id": 1,
+        "userId": 4,
+        "sellerId": 2,
+        "totalPrice": "7.50",
+        "deliveryAddress": "Rua da Pinga",
+        "deliveryNumber": "4",
+        "saleDate": "2021-11-25T08:09:20.000Z",
+        "status": "Pendente",
+        "createdAt": "2021-11-25T08:09:20.000Z",
+        "updatedAt": "2021-11-25T08:09:20.000Z",
+        "products": [
+            {
+                "id": 2,
+                "name": "Heineken 600ml",
+                "price": "7.50",
+                "stock": 4,
+                "urlImage": "http://localhost:3367/images/heineken_600ml.jpg",
+                "SalesProduct": {
+                    "saleId": 1,
+                    "productId": 2,
+                    "quantity": 1
+                }
+            }
+        ]
+    }
+]
 ```
