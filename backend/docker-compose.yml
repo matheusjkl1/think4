@@ -1,0 +1,33 @@
+version: '3.2'
+services:
+  databasesql:
+    image: mysql
+    container_name: databasesql
+    restart: always
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+
+  backendt4:
+      image: node:latest
+      container_name: backendt4
+      restart: always
+      links:
+        - databasesql
+      depends_on:
+        - databasesql
+      environment:
+        - MYSQL_HOST=databasesql
+        - MYSQL_PASSWORD=12345
+      ports:
+        - ${SERVER_PORT}:${SERVER_PORT}
+      volumes:
+        - .:/usr/src/app
+      working_dir: /usr/src/app
+      command: yarn dev
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+          max-file: "10"
