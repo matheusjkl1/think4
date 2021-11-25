@@ -60,6 +60,7 @@ function RegisterUser() {
             className="name-input input"
             placeholder="Seu nome"
           />
+          Nome com minimo 12 letras
         </label>
         <br />
         <label htmlFor="email-input">
@@ -84,6 +85,7 @@ function RegisterUser() {
             className="name-input input"
             placeholder="76532145680"
           />
+          CPF 11 digitos
         </label>
         <br />
         <label htmlFor="password-input">
@@ -96,6 +98,7 @@ function RegisterUser() {
             className="password-input input"
             placeholder="***********"
           />
+          Senha de 6 digitos
         </label>
         <br />
         <button

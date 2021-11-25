@@ -87,6 +87,7 @@ function Login() {
       <form id="form" className="Login--main--form">
         { createInput('email', 'Login') }
         { createInput('password', 'Senha') }
+        Senha de 6 digitos
         <button
           type="submit"
           disabled={ !isValid() }
