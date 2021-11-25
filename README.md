@@ -181,56 +181,7 @@ O retorna será:
       },
       isNewRecord: false
     },
-    Product {
-      dataValues: {
-        id: 3,
-        name: 'Antarctica Pilsen 300ml',
-        price: '2.49',
-        stock: 5,
-        urlImage: 'http://localhost:3367/images/antarctica_pilsen_300ml.jpg'
-      },
-      _previousDataValues: {
-        id: 3,
-        name: 'Antarctica Pilsen 300ml',
-        price: '2.49',
-        stock: 5,
-        urlImage: 'http://localhost:3367/images/antarctica_pilsen_300ml.jpg'
-      },
-      _changed: Set(0) {},
-      _options: {
-        isNewRecord: false,
-        _schema: null,
-        _schemaDelimiter: '',
-        raw: true,
-        attributes: [Array]
-      },
-      isNewRecord: false
-    },
-    Product {
-      dataValues: {
-        id: 4,
-        name: 'Brahma 600ml',
-        price: '7.50',
-        stock: 5,
-        urlImage: 'http://localhost:3367/images/brahma_600ml.jpg'
-      },
-      _previousDataValues: {
-        id: 4,
-        name: 'Brahma 600ml',
-        price: '7.50',
-        stock: 5,
-        urlImage: 'http://localhost:3367/images/brahma_600ml.jpg'
-      },
-      _changed: Set(0) {},
-      _options: {
-        isNewRecord: false,
-        _schema: null,
-        _schemaDelimiter: '',
-        raw: true,
-        attributes: [Array]
-      },
-      isNewRecord: false
-    }
+ /****/
 ]
 
 ```
