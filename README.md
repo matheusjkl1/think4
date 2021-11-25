@@ -84,7 +84,7 @@ Ao passar um objeto:
   "email": "emailexample@example.com",
 }
 ```
-O retorna será:
+O retorno será:
 ```sh
 {
     "id": 5,
@@ -109,7 +109,7 @@ Ao passar um objeto:
   "password": "passwordexample",
 }
 ```
-O retorna será:
+O retorno será:
 ```sh
 {
     "name": "Aderbar Pereira Santos",
@@ -128,7 +128,7 @@ O retorna será:
 1 - http://localhost:${SERVER_PORT}/customer/products
 ```
 
-O retorna será:
+O retorno será:
 ```sh
 [
     Product {
@@ -216,7 +216,7 @@ Ao passar um objeto:
  }
 ```
 
-O retorna será:
+O retorno será:
 ```sh
 dataValues: {
   id: 3,
@@ -244,7 +244,7 @@ dataValues: {
 Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlhOGYxZWRlOWJmN2U2MjcwMWU2MGQiLCJpYXQiOjE2Mzc1MTkxMzQsImV4cCI6MTYzNzUyMjQzNH0.fNGQ-Q9J3GkXhm_KcjCQkRsZxI9wGqd9hYdDJpHLT60
 ```
 
-O retorna será:
+O retorno será:
 ```sh
 [
     {
