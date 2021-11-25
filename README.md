@@ -50,10 +50,25 @@ NODE_ENV=development
 SECRET_KEY=minhachavesecreta
 ```
 
+### Na pasta backend, o seguinte comando para instalar as dependências de desenvolvimento: 
+```sh
+yarn install
+```
+
 ### Na pasta backend, execute o seguinte comando que fará a instalação do container docker
 ```sh
  make down && make up
 ```
+#### É possível conferir os logs dos containers com o seguindo comando:
+```sh
+ make logs
+```
+
+### Aguarde o container docker ser montado e copule o banco de dados com o seguindo comando: 
+```sh
+yarn db:reset
+```
+
 ### Após installar as dependências, você deve executar o seguinte comando para iniciar o Back-end:
 
 ```sh
