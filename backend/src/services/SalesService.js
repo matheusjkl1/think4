@@ -5,7 +5,6 @@ const {
 
 const checkoutNewSale = async (data, productCart) => {
   if (!data || !productCart) return { error: 'bad_request' };
-
   const newSale = await Sale.create(data);
 
   const products = [];

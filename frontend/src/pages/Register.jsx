@@ -110,11 +110,6 @@ function RegisterUser() {
         >
           Cadastrar
         </button>
-        {/* <p
-          data-testid="common_register__element-invalid_register"
-        >
-          Elemento oculto (mensagem de erro)
-        </p> */}
       </form>
     </div>
   );
